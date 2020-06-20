@@ -68,6 +68,7 @@ function replab_init(verbose)
     versionFilePath = strrep(fullfile(basePath, 'src', 'replab_Version.m'), '\', '/');
     alreadyInPath = false;
     for i = 1:length(candidates)
+        disp(candidate);
         candidate = strrep(candidates{i}, '\', '/');
         if isequal(candidate, versionFilePath)
             alreadyInPath = true;
@@ -75,6 +76,7 @@ function replab_init(verbose)
                 disp('RepLAB is already in the path');
             end
         else
+            disp(candidate);
             error(['Another instance of RepLAB in folder ' fileparts(fileparts(candidate)) ...
                    'is already in the path' char(10) 'Use this one or remove it from the path.']);
         end
