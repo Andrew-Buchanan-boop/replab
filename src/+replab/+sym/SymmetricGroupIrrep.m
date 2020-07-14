@@ -66,8 +66,8 @@ classdef SymmetricGroupIrrep < replab.Rep
              if group.domainSize > 12
                  error('The domain size must be less than or equal to 12.')
              end
-             if group.domainSize > 8
-                 warning('If the domain size exceeds 8, construction may be slow. For n > 9, some partitions may not work.')
+             if group.domainSize > 9
+                 warning('For n > 9, some partitions may not work.')
              end
              if sum(part) ~= group.domainSize
                  error('This is not a valid Young Diagram for this domain size.')
